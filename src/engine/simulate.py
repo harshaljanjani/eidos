@@ -23,7 +23,7 @@ class Simulator:
         num_synapses_before = self.network['source_neurons'].shape[0]
         if num_synapses_before == 0:
             return
-        keep_mask = self.network['weights'] >= self.network['prune_threshold']
+        keep_mask = cp.abs(self.network['weights']) >= self.network['prune_threshold']
         num_synapses_after = int(cp.sum(keep_mask).item())
         if num_synapses_after < num_synapses_before:
             print(f"\n=== Pruning ===")
