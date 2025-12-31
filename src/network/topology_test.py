@@ -24,12 +24,12 @@ def test_fixed_probability_connections():
 
 def test_autapse_prevention():
     s, t = topology.create_fixed_probability_connections(
-        1000, 1000, 0.5, allow_autapses=False
+        1000, 1000, 0.5, allow_autapses=False, is_recurrent=True
     )
     autapses = cp.sum(s == t)
     assert autapses == 0, "No autapses should be present when disallowed"
     s_allowed, t_allowed = topology.create_fixed_probability_connections(
-        1000, 1000, 0.5, allow_autapses=True
+        1000, 1000, 0.5, allow_autapses=True, is_recurrent=True
     )
     assert cp.sum(s_allowed == t_allowed) > 0, "Autapses should be present when allowed"
 
