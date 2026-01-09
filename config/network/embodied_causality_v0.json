@@ -49,7 +49,7 @@
     },
     {
       "source": "Franka_Extend_Motor",
-      "target": "A_is_Moving",
+      "target": "B_is_Moving",
       "topology": { "type": "fixed_probability", "probability": 0.9 },
       "synapse": {
         "weight": { "distribution": "uniform", "min": 0.0, "max": 0.1 },
@@ -58,8 +58,8 @@
       }
     },
     {
-      "source": "A_is_Moving",
-      "target": "B_is_Moving",
+      "source": "B_is_Moving",
+      "target": "A_is_Moving",
       "topology": { "type": "fixed_probability", "probability": 0.9 },
       "synapse": {
         "weight": { "distribution": "uniform", "min": 0.0, "max": 0.1 },

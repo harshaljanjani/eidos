@@ -28,7 +28,7 @@ def setup_scene(world):
             name="ball_a",
             position=np.array([0, 0.4, 0.75]),
             radius=0.04,
-            color=np.array([1.0, 0.0, 0.0])
+            color=np.array([0.0, 0.0, 1.0])
         )
     )
     ball_b = world.scene.add(
@@ -37,7 +37,7 @@ def setup_scene(world):
             name="ball_b",
             position=np.array([0, 0.6, 0.75]),
             radius=0.04,
-            color=np.array([0.0, 0.0, 1.0])
+            color=np.array([1.0, 0.0, 0.0])
         )
     )
     return robot_controller, ball_a, ball_b

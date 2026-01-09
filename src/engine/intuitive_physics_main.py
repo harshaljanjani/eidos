@@ -230,6 +230,8 @@ def run_simulation(simulation_app):
         ball_b.set_world_pose(position=np.array([0, 0.5, 0.2]))
         ball_a.set_linear_velocity(np.zeros(3))
         ball_b.set_linear_velocity(np.zeros(3))
+        ball_a.set_angular_velocity(np.zeros(3))
+        ball_b.set_angular_velocity(np.zeros(3))
         for _ in range(10): 
             world.step(render=True)
         # track spikes for this trial
